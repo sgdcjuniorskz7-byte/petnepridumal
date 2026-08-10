@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #F97316;
+  --color-on-primary: #0F172A;
+  --color-secondary: #FB923C;
+  --color-accent: #2563EB;
+  --color-background: #FFF7ED;
+  --color-foreground: #9A3412;
+  --color-muted: #F1F0F0;
+  --color-border: #FED7AA;
+  --color-destructive: #DC2626;
+  --color-ring: #F97316;
+  --color-success: #22C55E;
+  --color-warning: #EAB308;
+
+  --radius: 20px;
+  --radius-sm: 12px;
+  --radius-lg: 28px;
+
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: var(--color-foreground);
+  background: var(--color-background);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFF7ED 0%, #FEF3C7 50%, #FFF7ED 100%);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  width: 100%;
+  max-width: 480px;
+  overflow-y: auto;
+}
+
+button {
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

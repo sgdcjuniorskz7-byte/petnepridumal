@@ -1,0 +1,90 @@
+export const breeds = [
+  {
+    id: 'dog',
+    name: 'Пёс',
+    emoji: '🐕',
+    description: 'Верный друг и компаньон',
+    baseStats: { hunger: 70, thirst: 65, happiness: 80, energy: 90, hygiene: 85 },
+    sounds: { happy: 'bark', sad: 'whine', eat: 'munch' },
+    svg: 'dog',
+    traits: ['playful', 'loyal', 'energetic'],
+  },
+  {
+    id: 'cat',
+    name: 'Кошка',
+    emoji: '🐱',
+    description: 'Грациозная и независимая',
+    baseStats: { hunger: 65, thirst: 60, happiness: 85, energy: 70, hygiene: 95 },
+    sounds: { happy: 'purr', sad: 'meow', eat: 'munch' },
+    svg: 'cat',
+    traits: ['independent', 'curious', 'elegant'],
+  },
+  {
+    id: 'rabbit',
+    name: 'Кролик',
+    emoji: '🐰',
+    description: 'Милый и пушистый',
+    baseStats: { hunger: 60, thirst: 70, happiness: 75, energy: 80, hygiene: 90 },
+    sounds: { happy: 'squeak', sad: 'whimper', eat: 'crunch' },
+    svg: 'rabbit',
+    traits: ['gentle', 'shy', 'fluffy'],
+  },
+  {
+    id: 'hamster',
+    name: 'Хомяк',
+    emoji: '🐹',
+    description: 'Забавный и активный',
+    baseStats: { hunger: 55, thirst: 60, happiness: 70, energy: 95, hygiene: 80 },
+    sounds: { happy: 'squeak', sad: 'chirp', eat: 'crunch' },
+    svg: 'hamster',
+    traits: ['active', 'tiny', 'playful'],
+  },
+  {
+    id: 'turtle',
+    name: 'Черепаха',
+    emoji: '🐢',
+    description: 'Мудрая и спокойная',
+    baseStats: { hunger: 50, thirst: 55, happiness: 65, energy: 40, hygiene: 70 },
+    sounds: { happy: 'hiss', sad: 'grunt', eat: 'crunch' },
+    svg: 'turtle',
+    traits: ['calm', 'wise', 'slow'],
+  },
+  {
+    id: 'parrot',
+    name: 'Попугай',
+    emoji: '🦜',
+    description: 'Яркий и болтливый',
+    baseStats: { hunger: 60, thirst: 65, happiness: 90, energy: 85, hygiene: 75 },
+    sounds: { happy: 'squawk', sad: 'whistle', eat: 'crunch' },
+    svg: 'parrot',
+    traits: ['colorful', 'vocal', 'social'],
+  },
+];
+
+export const accessories = [
+  { id: 'hat', name: 'Шапка', emoji: '🎩', color: '#1a1a1a' },
+  { id: 'scarf', name: 'Шарф', emoji: '🧣', color: '#DC2626' },
+  { id: 'glasses', name: 'Очки', emoji: '🕶️', color: '#1a1a1a' },
+  { id: 'bow', name: 'Бант', emoji: '🎀', color: '#EC4899' },
+  { id: 'crown', name: 'Корона', emoji: '👑', color: '#FFD700' },
+  { id: 'bandana', name: 'Бандана', emoji: '🏴', color: '#7C3AED' },
+];
+
+export const colorPresets = [
+  { id: 'brown', name: 'Коричневый', primary: '#D2691E', secondary: '#DEB887' },
+  { id: 'black', name: 'Чёрный', primary: '#1a1a1a', secondary: '#4a4a4a' },
+  { id: 'white', name: 'Белый', primary: '#F5F5F5', secondary: '#E0E0E0' },
+  { id: 'orange', name: 'Рыжий', primary: '#F97316', secondary: '#FDBA74' },
+  { id: 'gray', name: 'Серый', primary: '#6B7280', secondary: '#9CA3AF' },
+  { id: 'pink', name: 'Розовый', primary: '#EC4899', secondary: '#F9A8D4' },
+  { id: 'blue', name: 'Голубой', primary: '#3B82F6', secondary: '#93C5FD' },
+  { id: 'purple', name: 'Фиолетовый', primary: '#8B5CF6', secondary: '#C4B5FD' },
+];
+
+export const sizeOptions = [
+  { id: 'tiny', name: 'Крошечный', scale: 0.7 },
+  { id: 'small', name: 'Маленький', scale: 0.85 },
+  { id: 'medium', name: 'Средний', scale: 1.0 },
+  { id: 'large', name: 'Большой', scale: 1.15 },
+  { id: 'huge', name: 'Огромный', scale: 1.3 },
+];
