@@ -6,6 +6,7 @@ import WhackGame from './games/WhackGame';
 import ColorGame from './games/ColorGame';
 import TapGame from './games/TapGame';
 import ReactionGame from './games/ReactionGame';
+import JumpGame from './games/JumpGame';
 
 const games = [
   { id: 'catch', name: 'Поймай мяч', emoji: '⚾', description: 'Лови мячи, зарабатывай очки', color: '#22C55E', component: CatchGame },
@@ -14,6 +15,7 @@ const games = [
   { id: 'color', name: 'Угадай цвет', emoji: '🎨', description: 'Найди нужный цвет', color: '#EC4899', component: ColorGame },
   { id: 'tap', name: 'Скорость', emoji: '👆', description: 'Жми кнопку как можно быстрее', color: '#0EA5E9', component: TapGame },
   { id: 'reaction', name: 'Реакция', emoji: '⚡', description: 'Проверь свою реакцию', color: '#F59E0B', component: ReactionGame },
+  { id: 'jump', name: 'Прыжки', emoji: '🏃', description: 'Прыгай через препятствия', color: '#14B8A6', component: JumpGame },
 ];
 
 export default function GameMenu({ onPlayGame }) {
