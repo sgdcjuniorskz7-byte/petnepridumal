@@ -1,7 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const COLORS = ['#EF4444', '#22C55E', '#3B82F6', '#EAB308', '#8B5CF6', '#EC4899'];
+const COLORS = [
+  { hex: '#EF4444', name: 'Красный' },
+  { hex: '#22C55E', name: 'Зелёный' },
+  { hex: '#3B82F6', name: 'Синий' },
+  { hex: '#EAB308', name: 'Жёлтый' },
+  { hex: '#8B5CF6', name: 'Фиолетовый' },
+  { hex: '#EC4899', name: 'Розовый' },
+  { hex: '#F97316', name: 'Оранжевый' },
+  { hex: '#14B8A6', name: 'Бирюзовый' },
+];
 
 function getRandomColor() { return COLORS[Math.floor(Math.random() * COLORS.length)]; }
 
@@ -16,7 +25,7 @@ export default function ColorGame({ onEnd }) {
 
   const newRound = () => {
     const correct = getRandomColor();
-    const wrongs = COLORS.filter(c => c !== correct).sort(() => Math.random() - 0.5).slice(0, 3);
+    const wrongs = COLORS.filter(c => c.hex !== correct.hex).sort(() => Math.random() - 0.5).slice(0, 3);
     const opts = [...wrongs, correct].sort(() => Math.random() - 0.5);
     setTargetColor(correct);
     setOptions(opts);
@@ -28,7 +37,7 @@ export default function ColorGame({ onEnd }) {
 
   const pick = (color) => {
     if (showResult) return;
-    if (color === targetColor) {
+    if (color.hex === targetColor.hex) {
       setScore(s => s + 1);
       setFeedback(true);
     } else {
@@ -56,14 +65,22 @@ export default function ColorGame({ onEnd }) {
           <span style={{ fontSize: '14px', fontFamily: "'Fredoka', sans-serif", color: '#6B7280' }}>
             Раунд {round}/{totalRounds} · 🏆 {score}
           </span>
+          <p style={{ margin: 0, fontSize: '16px', fontFamily: "'Fredoka', sans-serif", color: '#374151' }}>
+            Какой это цвет?
+          </p>
           <motion.div animate={feedback === true ? { scale: [1, 1.1, 1] } : feedback === false ? { x: [-5, 5, -5, 5, 0] } : {}}
-            style={{ width: '100px', height: '100px', borderRadius: '20px', background: targetColor,
-              boxShadow: `0 8px 24px ${targetColor}66` }} />
+            style={{ width: '120px', height: '120px', borderRadius: '20px', background: targetColor.hex,
+              boxShadow: `0 8px 24px ${targetColor.hex}66`, display: 'flex', alignItems: 'center', justifyContent: 'center' }} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
             {options.map(color => (
-              <motion.button key={color} onClick={() => pick(color)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}
-                style={{ width: '80px', height: '50px', borderRadius: '12px', border: '3px solid white',
-                  background: color, cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }} />
+              <motion.button key={color.hex} onClick={() => pick(color)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px',
+                  padding: '10px', borderRadius: '12px', border: '3px solid white',
+                  background: color.hex, cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+                <span style={{ fontSize: '14px', fontFamily: "'Fredoka', sans-serif", color: 'white', textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>
+                  {color.name}
+                </span>
+              </motion.button>
             ))}
           </div>
         </>
